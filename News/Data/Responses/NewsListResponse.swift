@@ -5,7 +5,6 @@
 //  Created by Tomas Fernandez Velazco on 19/3/22.
 //
 
-
 struct NewsResponse: Decodable {
     let source: SourceResponse
     let author: String
@@ -18,12 +17,12 @@ struct NewsResponse: Decodable {
 }
 
 struct SourceResponse: Decodable {
-    let id: String
+    let id: String?
     let name: String
 }
 
 struct ResultResponse: Decodable {
-    let totalResults: Int
+    let totalResults: Double
     let status: String
     let newsList: [NewsResponse]
     

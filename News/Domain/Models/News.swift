@@ -7,18 +7,18 @@
 
 import Foundation
 
-struct News {
+struct News: Codable {
     
     let author: String
     let title: String
     let description: String
     let url: String
     let urlToImage: String
-    let publishedAt: String
+    let publishedAt: Date
     let content: String
     let source: Source
     
-    init(author: String, title: String, description: String, url: String, urlToImage: String, publishedAt: String, content: String, source: Source) {
+    init(author: String, title: String, description: String, url: String, urlToImage: String, publishedAt: Date, content: String, source: Source) {
         self.author = author
         self.title = title
         self.description = description
@@ -30,7 +30,7 @@ struct News {
     }
 }
 
-struct Source {
+struct Source: Codable {
     let id: String
     let name: String
 }

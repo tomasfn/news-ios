@@ -26,18 +26,13 @@ class NewsFactory {
     }
     
     private func setSourceModel(sourceResponse: SourceResponse) -> Source {
-        return Source(id: sourceResponse.id, name: sourceResponse.name)
+        return Source(id: sourceResponse.id ?? "", name: sourceResponse.name)
     }
     
-    private func formattedDate(date: String) -> String {
+    private func formattedDate(date: String) -> Date {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        
-        var formatDate = ""
-        if let date = dateFormatter.date(from: date) {
-            formatDate = dateFormatter.string(from: date)
-        }
-        
-        return formatDate
+        let date = dateFormatter.date(from: date)
+        return date ?? Date()
     }
 }

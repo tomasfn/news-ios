@@ -21,7 +21,7 @@ extension BaseTarget: TargetType {
     var path: String {
         switch self {
         case .retrieveNewsList:
-            return "/v2/everything?"
+            return "/v2/everything"
         }
     }
     
