@@ -61,7 +61,8 @@ class NewsDetailViewModel {
     //MARK: - Private Methods
         
     private func getAuthor() -> String {
-        return selectedNews?.author ?? ""
+        let author = selectedNews?.author ?? ""
+        return "Autor: " + author
     }
     
     private func getTitle() -> String {
@@ -89,9 +90,9 @@ class NewsDetailViewModel {
     }
     
     private func getDateWasPublished() -> String? {
-        var date = ""
+        var date = "Fecha: "
         if let publishedAt = selectedNews?.publishedAt {
-            date = formatDate(date: publishedAt)
+            date.append(formatDate(date: publishedAt))
         }
         return date
     }
